@@ -1,0 +1,34 @@
+Shopify	
+
+All about shopify
+***Introduction***
+
+Shopify is mostly Dynamic(Modularity). It refers to other things that needs to be implemented dynamically rather than working on static data.
+Which provides flexibility and thus it will require logic base.
+
+Designing, structuring and functioning of pages is ultimately similar to our old html, css and js way but it's just more user oriented(Flexible).
+
+
+for e.g.(Just for basic idea, don't worry if you don't understand anything about schema)
+
+in normal html element we use :
+<img src='thispic.jpg' alt='apicture'>
+
+but in shopify we will use section schema to obtain image from user and providing that schema an unique id and then refer your image source to that id:
+<img src="{{block.settings.choosed-image}}" alt="{{block.settings.altText}}">
+
+here structure of <img> element is same but the way image has been picked is a reference to the image picker schema
+
+
+***Shopify Structure***
+Since shopify is mostly about modularity, home come it's structure can't be modular.
+Just as a normal website has multiple pages, shopify website also multiple pages on single website and the way there are structured are different.
+It's like a container into another container inside of a container.
+Outer most layer is theme layer which describes the basic(standard) struture of page, and a theme should include header and footer section on every page.
+Layout is the second layer inside of theme, which could be changed according to the page, you can use same page layout on multiple pages with modularity.
+    for instance a layout for product page is created, thus it can be used anywhere on the website, using layout-name.liquid on theme file.
+Section is the third layer, it's inside Layout container, sections are block of codes that can be used in any layouts.
+    collection of section is what makes a layout. like: grid section, list section, image slider section. (These are reusable(flexibility))
+    for instance we have created a two column, two row grid of product and now we want to use it on two pages, then we just have to include this section inside any layout file
+Snippets should not be considered as layer, there are more like a repeatable block of code which we do not want to write again and again, instead include them inside
+snippet and call the snippet in any Section where you need it.
